@@ -77,3 +77,18 @@
     touch-action: manipulation;
   }
 }
+
+/* Evitar zoom automático en formularios de iPhone */
+@media (max-width: 820px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    font-size: 16px !important;
+  }
+}
