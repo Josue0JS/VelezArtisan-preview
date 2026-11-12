@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#173d32">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="VelezArtisan">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL0bngFX_GmsepQNIeoejolGIwdtP8nJU-XZd3z_AfKi7gbtNMG95kvxtF&s=10"><title>ARTISAN CAFÉ · Inventario</title>
+
+<!-- Tipografías: conexiones anticipadas para reducir el tiempo de descarga -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=DM+Sans:wght@400;500;700&family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Estilos (el orden importa) -->
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/glass.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+<div id="bg"><svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="gw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe6f4"/><stop offset="1" stop-color="#ffffff"/></linearGradient><radialGradient id="gl"><stop offset="0" stop-color="#fff0c4"/><stop offset="1" stop-color="#fff0c4" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="800" fill="#f4f1ec"/><rect x="50" y="70" width="380" height="480" rx="10" fill="url(#gw)"/><path d="M240 70V550M50 310H430" stroke="#e2dcd2" stroke-width="14"/><circle cx="130" cy="500" r="80" fill="#efe9de"/><circle cx="370" cy="520" r="60" fill="#f7f3ec"/><g fill="#d6cfc4"><rect x="520" y="170" width="640" height="12"/><rect x="520" y="320" width="640" height="12"/></g><g fill="#ffffff"><rect x="560" y="128" width="36" height="42" rx="7"/><rect x="620" y="136" width="30" height="34" rx="6" fill="#e8dfd0"/><rect x="700" y="124" width="40" height="46" rx="7"/><rect x="900" y="132" width="34" height="38" rx="6" fill="#f2cdb4"/><rect x="980" y="126" width="38" height="44" rx="7"/><rect x="580" y="278" width="36" height="42" rx="7" fill="#cfe0ee"/><rect x="760" y="270" width="40" height="50" rx="7"/><rect x="940" y="280" width="34" height="40" rx="6" fill="#e8dfd0"/></g><circle cx="620" cy="60" r="70" fill="url(#gl)"/><circle cx="880" cy="70" r="80" fill="url(#gl)"/><circle cx="1100" cy="60" r="60" fill="url(#gl)"/><rect y="590" width="1200" height="210" fill="#e4ded4"/><rect y="580" width="1200" height="26" fill="#fbf9f5"/><rect x="740" y="450" width="320" height="130" rx="16" fill="#c3cfd6"/><rect x="780" y="420" width="240" height="40" rx="10" fill="#a6b5be"/><g opacity=".85"><circle cx="150" cy="660" r="34" fill="#ffffff"/><circle cx="330" cy="710" r="22" fill="#ffe3b5"/><circle cx="500" cy="650" r="40" fill="#ffffff"/><circle cx="1120" cy="690" r="36" fill="#cfe6f4"/><circle cx="60" cy="570" r="20" fill="#ffffff"/><circle cx="1010" cy="400" r="26" fill="#ffe3b5"/><circle cx="460" cy="440" r="30" fill="#ffffff"/></g></svg><i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i></div><div class="app">
+<aside id="nv"></aside><main id="m"></main></div><div id="fab"></div>
+<div id="mo" onclick="closeM()"></div>
+<div id="lg"><div class="lgc"><div class="br">ARTISAN<br>CAFÉ</div><p class="mu" style="text-align:center">Inicia sesión para continuar</p><label>Correo<input id="le" type="email" autocomplete="username" onkeydown="if(event.key=='Enter')$('#lp').focus()"></label><label>Clave<input id="lp" type="password" autocomplete="current-password" onkeydown="if(event.key=='Enter')login()"></label><p id="lm" class="lme" role="alert"></p><button class="btn" id="lb" onclick="login()">Entrar</button></div></div>
+
+<!-- Firebase (inicio de sesión y base de datos) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<!-- Lógica de la aplicación (el orden importa) -->
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/state.js"></script>
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/predict.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/views.js"></script>
+<script src="js/ventas.js"></script>
+<script src="js/inventario.js"></script>
+<script src="js/mermas.js"></script>
+<script src="js/productos.js"></script>
+<script src="js/proveedores.js"></script>
+<script src="js/recepciones.js"></script>
+<script src="js/pedidos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/mobile.js"></script>
+</body>
+</html>

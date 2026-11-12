@@ -1,0 +1,282 @@
+/* ===== horarios.css =====
+   Horarios del equipo: tabla estilo Excel, navegación de semanas, equipo y reglas, impresión. */
+
+.hz-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.hz-ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+.hz-ul li {
+  margin: 4px 0;
+  font-size: 14px;
+}
+.hz-ul.hz-bad li {
+  color: var(--bd);
+}
+.hz-ul.hz-ok {
+  list-style: none;
+  padding-left: 0;
+}
+.hz-ul.hz-bad small {
+  color: var(--mu);
+}
+.hz-d {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+  vertical-align: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  flex: none;
+}
+.hz-d-d {
+  background: #1c1c1c;
+}
+.hz-d-v {
+  background: #bfe3f5;
+}
+.hz-d-i {
+  background: #d4f0c0;
+}
+.hz-d-h {
+  background: #e9e1d3;
+}
+.hz-d-h2 {
+  background: #a7d98b;
+}
+.hz-d-e {
+  background: #f6e44b;
+}
+.hz-lg {
+  display: flex;
+  gap: 6px 18px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--mu);
+}
+.hz-gd {
+  margin-top: 10px;
+  font-size: 13px;
+}
+.hz-gd summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.hz-gl p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.hz-bt {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+#hzn {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Datos de cabecera: PDV, almuerzo, semana */
+.hz-info {
+  display: flex;
+  gap: 8px 22px;
+  flex-wrap: wrap;
+  margin: 4px 0 10px;
+  font-size: 14px;
+}
+.hz-info b {
+  margin-right: 6px;
+}
+
+/* Tabla */
+.hz-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--ln);
+  border-radius: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+table.hz {
+  border-collapse: collapse;
+  min-width: 1240px;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+}
+table.hz th,
+table.hz td {
+  border: 1px solid var(--ln);
+  padding: 4px 3px;
+  white-space: nowrap;
+}
+table.hz thead th {
+  background: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  vertical-align: middle;
+}
+table.hz thead th b {
+  display: block;
+  font-size: 16px;
+  line-height: 1.1;
+}
+table.hz thead th small {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--bd);
+  text-transform: uppercase;
+}
+table.hz .hz-dom {
+  background: #f6e44b;
+  color: #12221f;
+}
+table.hz th.hz-nm {
+  text-align: left;
+  padding: 6px 10px;
+  min-width: 150px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #fbf9f5;
+}
+table.hz thead th.hz-nm {
+  text-align: center;
+}
+table.hz td.hz-on {
+  background: #a7d98b;
+}
+table.hz td.hz-off {
+  background: #1c1c1c;
+}
+table.hz td.hz-vac {
+  background: #bfe3f5;
+}
+table.hz td.hz-inc {
+  background: #d4f0c0;
+}
+table.hz td.hz-vac input,
+table.hz td.hz-inc input {
+  font-weight: 700;
+  font-size: 11px;
+}
+table.hz td input {
+  width: 48px;
+  min-width: 0;
+  padding: 3px 2px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  text-align: center;
+  font: inherit;
+}
+table.hz td.hz-off input {
+  color: #fff;
+}
+table.hz td input:focus {
+  background: #fff;
+  color: #12221f;
+}
+table.hz td.hz-tt,
+table.hz td:nth-last-child(-n + 4) {
+  font-weight: 700;
+  background: rgba(246, 228, 75, 0.35);
+}
+
+/* Equipo y reglas */
+.hz-p {
+  display: grid;
+  gap: 6px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--ln);
+}
+.hz-k {
+  display: flex;
+  gap: 4px 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hz-k .pil {
+  border: 0;
+  padding: 2px 0;
+}
+.hz-lb {
+  min-width: 120px;
+  font-size: 12px;
+}
+.hz-dg {
+  display: grid;
+  grid-template-columns: 52px repeat(4, 1fr);
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+}
+.hz-dg b {
+  color: var(--mu);
+  font-weight: 500;
+}
+.hz-dg input {
+  padding: 6px 8px;
+}
+.fm label.pil {
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  color: var(--tx);
+}
+
+/* Impresión: solo el horario, en horizontal */
+@page {
+  size: landscape;
+  margin: 8mm;
+}
+@media print {
+  #nv,
+  #fab,
+  #bg,
+  .hz-np,
+  .hd > div:last-child,
+  .toast {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+  .app {
+    display: block;
+  }
+  .cd {
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+  .hz-wrap {
+    overflow: visible;
+    border: 0;
+  }
+  table.hz {
+    min-width: 0;
+    font-size: 9px;
+  }
+  table.hz td input {
+    width: 100%;
+  }
+  table.hz th.hz-nm {
+    position: static;
+    min-width: 0;
+  }
+  table.hz td.hz-on,
+  table.hz td.hz-off,
+  table.hz td.hz-vac,
+  table.hz td.hz-inc,
+  table.hz .hz-dom {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

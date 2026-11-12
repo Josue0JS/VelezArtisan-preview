@@ -1,0 +1,317 @@
+/* ===== animations.css =====
+   Animaciones y movimiento (se desactivan si el dispositivo reduce el movimiento). */
+
+html {
+  scroll-behavior: smooth;
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+}
+@keyframes grow {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes growx {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes ring {
+  from {
+    stroke-dasharray: 0 100;
+  }
+}
+@keyframes shim {
+  to {
+    background-position: -200% 0;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes sheet {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+}
+@keyframes pillin {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+}
+@keyframes bump {
+  40% {
+    transform: scale(1.045);
+  }
+}
+@keyframes pop {
+  40% {
+    transform: scale(1.35);
+  }
+}
+@keyframes tin {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px) scale(0.92);
+  }
+}
+@keyframes orb {
+  to {
+    transform: translate(7vw, -6vh) scale(1.18);
+  }
+}
+@keyframes drift {
+  from {
+    transform: scale(1.12);
+  }
+  to {
+    transform: scale(1.22) translate(-1.5%, 1%);
+  }
+}
+@keyframes bar {
+  from {
+    transform: scaleY(0);
+  }
+}
+.rv {
+  animation: rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 50ms);
+}
+#m.enter .ch rect {
+  transform-box: fill-box;
+  transform-origin: bottom;
+  animation: grow 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(0.25s + var(--d, 0ms));
+}
+#m.enter .dn circle[stroke-dasharray] {
+  animation: ring 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: calc(0.3s + var(--d, 0ms));
+}
+#m.enter .hb i,
+#m.enter .gg i {
+  transform-origin: left;
+  animation: growx 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: 0.3s;
+}
+#m.enter .wd {
+  animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.sk {
+  height: 110px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  border: 1px solid var(--gb);
+  background: linear-gradient(100deg, var(--sf) 30%, rgba(255, 255, 255, 0.6) 50%, var(--sf) 70%);
+  background-size: 200% 100%;
+  animation: shim 1.3s linear infinite;
+}
+.sk.s {
+  height: 60px;
+  width: 60%;
+}
+#bg svg {
+  animation: drift 70s ease-in-out infinite alternate;
+}
+#bg .orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: orb 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.o1 {
+  width: 46vmax;
+  height: 46vmax;
+  left: -12vmax;
+  top: -10vmax;
+  background: radial-gradient(circle, #7fd6b4, transparent 65%);
+}
+.o2 {
+  width: 40vmax;
+  height: 40vmax;
+  right: -10vmax;
+  top: 18vh;
+  background: radial-gradient(circle, #ffd48a, transparent 65%);
+  animation-duration: 34s;
+  animation-delay: -8s;
+}
+.o3 {
+  width: 36vmax;
+  height: 36vmax;
+  left: 22vw;
+  bottom: -18vmax;
+  background: radial-gradient(circle, #a9cdf5, transparent 65%);
+  animation-duration: 40s;
+  animation-delay: -15s;
+}
+.cd,
+.tl,
+.k,
+.pc {
+  background-image: radial-gradient(
+    300px circle at var(--mx, 50%) var(--my, -60%),
+    rgba(255, 255, 255, var(--sa, 0)),
+    transparent 65%
+  );
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+.cd:hover,
+.tl:hover,
+.k:hover,
+.pc:hover {
+  --sa: 0.3;
+}
+.k:hover,
+.pc:hover,
+.tl:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 38px rgba(40, 60, 60, 0.2);
+}
+.btn {
+  transition:
+    transform 0.15s,
+    filter 0.2s,
+    box-shadow 0.2s,
+    background 0.2s;
+}
+.btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(31, 122, 92, 0.28);
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn.x:hover,
+.btn.g:hover,
+.btn.s:hover {
+  box-shadow: none;
+}
+.chips button {
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.15s;
+}
+.chips button:hover {
+  transform: translateY(-1px);
+}
+.chips button:active {
+  transform: scale(0.95);
+}
+.rh {
+  transition: background 0.2s;
+}
+.rh:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+}
+.rx {
+  animation: fade 0.3s;
+}
+aside button {
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s;
+  position: relative;
+}
+aside button:hover {
+  transform: translateX(3px);
+  color: #fff;
+}
+aside button.on::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 24%;
+  bottom: 24%;
+  width: 3px;
+  border-radius: 3px;
+  background: #7fe0bd;
+  animation: growy 0.35s;
+}
+@keyframes growy {
+  from {
+    transform: scaleY(0);
+  }
+}
+.tl.bump {
+  animation: bump 0.32s;
+}
+.tl.bump .qb span {
+  display: inline-block;
+  animation: pop 0.32s;
+}
+.qb {
+  transition: transform 0.2s;
+}
+.pill.in {
+  animation: pillin 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+}
+#mo.on {
+  animation: fade 0.22s;
+}
+.sh {
+  animation: sheet 0.42s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+}
+.toast {
+  animation: tin 0.38s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.toast::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #7fe0bd;
+  box-shadow: 0 0 0 0 rgba(127, 224, 189, 0.7);
+  animation: ping 1.2s;
+}
+@keyframes ping {
+  to {
+    box-shadow: 0 0 0 10px rgba(127, 224, 189, 0);
+  }
+}
+.toast.out {
+  opacity: 0;
+  transform: translate(-50%, 10px);
+  transition: 0.3s;
+}
+.dt2 summary {
+  transition: color 0.2s;
+}
+.dt2[open] {
+  animation: fade 0.3s;
+}
+.dt2 summary:hover {
+  color: var(--ac);
+}
+@media (max-width: 820px) {
+  aside button:hover {
+    transform: none;
+  }
+  aside button.on::before {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
