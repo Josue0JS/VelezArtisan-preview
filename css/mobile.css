@@ -48,3 +48,32 @@
     z-index: 9999 !important;
   }
 }
+
+/* Menú Más: desplazamiento correcto en iPhone */
+@media (max-width: 820px) {
+  #mo {
+    z-index: 1000;
+    height: 100dvh;
+    overflow: hidden;
+    align-items: flex-end;
+  }
+
+  #mo .sh {
+    box-sizing: border-box;
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+
+    padding-bottom:
+      calc(28px + env(safe-area-inset-bottom, 0px));
+  }
+
+  #mo .mb {
+    min-height: 48px;
+    touch-action: manipulation;
+  }
+}
