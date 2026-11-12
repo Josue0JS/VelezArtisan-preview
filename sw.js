@@ -1,5 +1,5 @@
 /* Cache únicamente de recursos propios. No interceptar Firebase ni peticiones remotas. */
-const CACHE = 'velezartisan-static-v1';
+const CACHE = 'velezartisan-static-v2';
 const STATIC = ['./','./index.html','./manifest.webmanifest',
  './css/base.css','./css/glass.css','./css/components.css','./css/animations.css','./css/theme.css','./css/login.css','./css/mobile.css','./css/horarios.css',
  './js/config.js','./js/utils.js','./js/effects.js','./js/state.js','./js/data.js','./js/auth.js','./js/predict.js','./js/charts.js','./js/views.js','./js/ventas.js','./js/inventario.js','./js/mermas.js','./js/productos.js','./js/proveedores.js','./js/recepciones.js','./js/pedidos.js','./js/main.js','./js/mobile.js','./js/horarios.js',
