@@ -37,3 +37,14 @@
       calc(125px + env(safe-area-inset-bottom, 0px));
   }
 }
+
+/* Ocultar navegación inferior durante el login */
+@media (max-width: 820px) {
+  body:has(#lg.on) #nv {
+    display: none !important;
+  }
+
+  #lg.on {
+    z-index: 9999 !important;
+  }
+}
