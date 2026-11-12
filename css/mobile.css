@@ -92,3 +92,21 @@
     font-size: 16px !important;
   }
 }
+
+/* Evitar zoom automático al escribir en iPhone */
+@media (max-width: 820px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
+/* Evitar zoom automático de iOS en el login */
+@media (max-width: 820px) {
+  #lg input#le,
+  #lg input#lp {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+  }
+}
